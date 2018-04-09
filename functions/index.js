@@ -15,18 +15,20 @@ app.use(cors)
 
 app.get("/keyboard", function (request, response) {
 
+    console.log("/keyboard-> user_key: " + request.body["user_key"])
     responseMessage = {
         "type" : "buttons",
         "buttons" : [
             "뭐해?"
         ]}
 
-    response.setHeader('Content-Type', 'application/json');
+    // response.setHeader('Content-Type', 'application/json');
     response.status(200).send(JSON.stringify(responseMessage))
 })
 
 app.post("/message", function (request, response) {
 
+    console.log("/message-> user_key: " + request.body["user_key"])
     responseMessage = {
         "message": {
             "text": "뭐하지?",
@@ -44,6 +46,8 @@ app.post("/message", function (request, response) {
 })
 
 app.post("/friend", function (request, response) {
+
+    console.log("/friend-> user_key: " + request.body["user_key"])
     response.setHeader('Content-Type', 'application/json');
     response.status(200).send()
 })
