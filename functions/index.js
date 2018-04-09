@@ -19,7 +19,7 @@ app.get("/keyboard", function (request, response) {
     responseMessage = {
         "type" : "buttons",
         "buttons" : [
-            "뭐해?"
+            "뭐 하려고 했지?"
         ]}
 
     // response.setHeader('Content-Type', 'application/json');
@@ -31,12 +31,12 @@ app.post("/message", function (request, response) {
     console.log("/message-> user_key: " + request.body["user_key"])
     responseMessage = {
         "message": {
-            "text": "뭐하지?",
+            "text": "뭐였더라?",
         },
         "keyboard": {
             "type": "buttons",
             "buttons": [
-                "뭐해?"
+                "뭐 하려고 했지?"
             ]
         }
     }
